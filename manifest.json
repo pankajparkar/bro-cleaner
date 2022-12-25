@@ -7,13 +7,6 @@
     "default_popup": "clean.html"
   },
   "description": "Browser Cleaner helps to clean browser storage in single click",
-  "permissions": ["storage"],
-  "author": "parkarpankaj3@gmail.com",
-  "content_scripts": [
-    {
-      "matches": ["https://*/*"],
-      "css": ["browser-clean.css"],
-      "js": ["browser-clean.js"]
-    }
-  ]
+  "permissions": ["storage", "activeTab", "tabs", "browsingData"],
+  "author": "parkarpankaj3@gmail.com"
 }
