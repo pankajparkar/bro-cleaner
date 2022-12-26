@@ -1,11 +1,26 @@
 form {
     width: 200px;
     padding: 5px;
+    font-size: 14px;
 }
 
 form button {
     margin-top: 5px;
 }
+
 .form-control {
     display: block;
+}
+
+form .btn-submit {
+    background-color: #4CAF50;
+    border: none;
+    color: #FFFFFF;
+    padding: 8px 8px;
+    border-radius: 4px;
+    text-align: center;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    text-decoration: none;
+    cursor: pointer;
 }
