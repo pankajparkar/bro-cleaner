@@ -9,7 +9,6 @@
     "default_title": "Browser Clean",
     "default_popup": "clean.html",
     "default_icon": {
-      "16": "icons/icon_16.png",
       "32": "icons/icon_32.png"
     }
   },
