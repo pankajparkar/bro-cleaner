@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Browser Cleaner",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Browser Cleaner helps to clean browser storage in single click",
   "permissions": ["storage", "activeTab", "tabs", "browsingData"],
   "author": "parkarpankaj3@gmail.com",
