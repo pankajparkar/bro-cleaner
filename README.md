@@ -6,6 +6,6 @@ Browser Cleaner Extension
 
 - Supports
   - Clean Local Storage
-  - Clean Session Storage
   - Clean Cache Storage
-  - Clean Cookie Storage
+  - Clean Cookies
+  - Clean WebSQL

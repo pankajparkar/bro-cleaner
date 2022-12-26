@@ -2,7 +2,7 @@
 function getUrl(currentTab) {
     const originRegex = /(^https?:\/\/)[^\/]+/gi;
     const matched = currentTab.url.match(originRegex);
-    return matched && matched.length && matched[0];
+    return matched && matched.length && matched[0] || '';
 }
 
 async function runBrowserCleaner(obj) {
@@ -17,17 +17,10 @@ async function runBrowserCleaner(obj) {
             currentUrl
         ]
     }, obj,
-        // {
-        //     // "cacheStorage": true,
-        //     // "cookies": true,
-        //     // "fileSystems": true,
-        //     // "indexedDB": true,
-        //     "localStorage": true,
-        //     // "sessionStorage": true,
-        //     // "pluginData": true,
-        //     // "serviceWorkers": true,
-        //     // "webSQL": true
-        // }, 
+        // "fileSystems": true,
+        // "indexedDB": true,
+        // "pluginData": true,
+        // "serviceWorkers": true,
         () => {
             alert(`Cleared site data on ${currentUrl}`);
             // chrome.tabs.reload();
@@ -41,10 +34,10 @@ const getFormElements = () => {
 async function formSubmit(event) {
     event.preventDefault();
     event.stopPropagation();
-    const [localStorageEl, sessionStorageEl, cacheStorageEl, cookiesEl,] = getFormElements();
+    const [localStorageEl, webSQLEl, cacheStorageEl, cookiesEl,] = getFormElements();
     const obj = {
         localStorage: localStorageEl.checked,
-        // sessionStorage: sessionStorage.checked,
+        webSQL: webSQLEl.checked,
         cacheStorage: cacheStorageEl.checked,
         cookies: cookiesEl.checked,
     };
@@ -53,11 +46,11 @@ async function formSubmit(event) {
 }
 
 async function prefillValues() {
-    const { localStorage, cacheStorage, cookies } = await chrome.storage.local.get(['localStorage', 'cacheStorage', 'cookies', 'sessionStorage']);
-    const [localStorageEl, sessionStorageEl, cacheStorageEl, cookiesEl,] = getFormElements();
+    const { localStorage, webSQL, cacheStorage, cookies } = await chrome.storage.local.get(['localStorage', 'cacheStorage', 'cookies', 'sessionStorage']);
+    const [localStorageEl, webSQLEl, cacheStorageEl, cookiesEl,] = getFormElements();
     localStorageEl.checked = localStorage || false;
-    sessionStorageEl.checked = cacheStorage || false;
-    cacheStorageEl.checked = cookies || false;
+    webSQLEl.checked = webSQL || false;
+    cacheStorageEl.checked = cacheStorage || false;
     cookiesEl.checked = cookies || false;
 }
 
