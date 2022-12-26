@@ -2,15 +2,32 @@
 <html>
 
 <head>
-    <meta http-equiv="Content-Security-Policy"
-        content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'">
     <title>Cleaner</title>
+    <link rel="stylesheet" href="./clean.css">
 </head>
 
 <body>
-    <button id="run-bro-clean" type="button">
-        Run Browser Cleaner
-    </button>
+    <form novalidate name="browser-cleaner">
+        <div class="form-control">
+            <input type="checkbox" name="local-storage" id="local-storage" />
+            <label for="local-storage">Local Storage</label>
+        </div>
+        <div class="form-control">
+            <input type="checkbox" name="session-storage" id="session-storage" />
+            <label for="local-storage">Session Storage</label>
+        </div>
+        <div class="form-control">
+            <input type="checkbox" name="cache-storage" id="cache-storage" />
+            <label for="local-storage">Cache Storage</label>
+        </div>
+        <div class="form-control">
+            <input type="checkbox" name="cookies" id="cookies" />
+            <label for="local-storage">Cookies</label>
+        </div>
+        <button type="submit">
+            Run Browser Cleaner
+        </button>
+    </form>
     <script src="./clean.js"></script>
 </body>
 

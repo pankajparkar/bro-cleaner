@@ -1,0 +1,11 @@
+form {
+    width: 200px;
+    padding: 5px;
+}
+
+form button {
+    margin-top: 5px;
+}
+.form-control {
+    display: block;
+}
