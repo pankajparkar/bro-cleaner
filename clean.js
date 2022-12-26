@@ -34,7 +34,7 @@ const getFormElements = () => {
 async function formSubmit(event) {
     event.preventDefault();
     event.stopPropagation();
-    const [localStorageEl, webSQLEl, cacheStorageEl, cookiesEl,] = getFormElements();
+    const [localStorageEl, cacheStorageEl, cookiesEl, webSQLEl] = getFormElements();
     const obj = {
         localStorage: localStorageEl.checked,
         webSQL: webSQLEl.checked,
