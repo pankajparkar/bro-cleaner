@@ -46,8 +46,8 @@ async function formSubmit(event) {
 }
 
 async function prefillValues() {
-    const { localStorage, webSQL, cacheStorage, cookies } = await chrome.storage.local.get(['localStorage', 'cacheStorage', 'cookies', 'sessionStorage']);
-    const [localStorageEl, webSQLEl, cacheStorageEl, cookiesEl,] = getFormElements();
+    const { localStorage, cacheStorage, cookies, webSQL } = await chrome.storage.local.get(['localStorage', 'cacheStorage', 'cookies', 'webSQL']);
+    const [localStorageEl, cacheStorageEl, cookiesEl, webSQLEl] = getFormElements();
     localStorageEl.checked = localStorage || false;
     webSQLEl.checked = webSQL || false;
     cacheStorageEl.checked = cacheStorage || false;
