@@ -2,11 +2,28 @@
   "manifest_version": 3,
   "name": "Browser Cleaner",
   "version": "0.0.1",
-  "action": {
-    "default_title": "Click Me",
-    "default_popup": "clean.html"
-  },
   "description": "Browser Cleaner helps to clean browser storage in single click",
   "permissions": ["storage", "activeTab", "tabs", "browsingData"],
-  "author": "parkarpankaj3@gmail.com"
+  "author": "parkarpankaj3@gmail.com",
+  "action": {
+    "default_title": "Browser Clean",
+    "default_popup": "clean.html",
+    "default_icon": {
+      "16": "icons/icon_16.png",
+      "24": "icons/icon_24.png",
+      "38": "icons/icon_38.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon_16.png",
+    "24": "icons/icon_24.png",
+    "32": "icons/icon_32.png",
+    "38": "icons/icon_38.png",
+    "48": "icons/icon_48.png",
+    "64": "icons/icon_64.png",
+    "72": "icons/icon_72.png",
+    "80": "icons/icon_80.png",
+    "96": "icons/icon_96.png",
+    "128": "icons/icon_128.png"
+  }
 }
