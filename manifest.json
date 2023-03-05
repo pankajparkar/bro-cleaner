@@ -3,7 +3,7 @@
   "name": "Browser Cleaner",
   "version": "1.0.0",
   "description": "Browser Cleaner helps to clean browser storage in single click",
-  "permissions": ["storage", "activeTab", "tabs", "browsingData"],
+  "permissions": ["storage", "tabs", "browsingData"],
   "author": "parkarpankaj3@gmail.com",
   "action": {
     "default_title": "Browser Clean",
