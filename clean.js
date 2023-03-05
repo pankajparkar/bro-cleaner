@@ -5,6 +5,10 @@ function getUrl(currentTab) {
     return matched && matched.length && matched[0] || '';
 }
 
+function isEmpty(value) {
+    return value === undefined || value === null || value === '';
+}
+
 async function runBrowserCleaner(obj) {
     const [currentTab] = await chrome.tabs.query({
         active: true,
@@ -48,10 +52,10 @@ async function formSubmit(event) {
 async function prefillValues() {
     const { localStorage, cacheStorage, cookies, webSQL } = await chrome.storage.local.get(['localStorage', 'cacheStorage', 'cookies', 'webSQL']);
     const [localStorageEl, cacheStorageEl, cookiesEl, webSQLEl] = getFormElements();
-    localStorageEl.checked = localStorage || false;
-    webSQLEl.checked = webSQL || false;
-    cacheStorageEl.checked = cacheStorage || false;
-    cookiesEl.checked = cookies || false;
+    localStorageEl.checked = !isEmpty(localStorage) ? localStorage : true;
+    webSQLEl.checked = !isEmpty(webSQL) ? webSQL : true;
+    cacheStorageEl.checked = !isEmpty(cacheStorage) ? cacheStorage : true;
+    cookiesEl.checked = !isEmpty(cookies) ? cookies : true;
 }
 
 document.addEventListener('DOMContentLoaded', async function () {
